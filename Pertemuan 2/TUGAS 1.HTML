@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contoh: Radio, Dropdown, Textarea, dan Frames</title>
+</head>
+<body>
+  <section>
+    <h2>1) Radio Button</h2>
+    <form id="form-sample">
+      <div>
+        <label><input type="radio" name="warna" value="pink"> Pink</label>
+        <label><input type="radio" name="warna" value="biru"> Biru</label>
+        <label><input type="radio" name="warna" value="hijau"> Hijau</label>
+      </div>
+      <div>
+        <span id="radio-result" class="result-note"></span>
+      </div>
+    </form>
+  </section>
+
+  <section>
+    <h2>2) Drop Down (Select)</h2>
+    <div>
+      <select id="pilih-buah">
+        <option value="">-- Pilih buah --</option>
+        <option value="alpukat">Alpukat</option>
+        <option value="pisang">Pisang</option>
+        <option value="mangga">Mangga</option>
+      </select>
+      <span id="select-result" class="result-note"></span>
+    </div>
+  </section>
+
+  <section>
+    <h2>3) Text Area</h2>
+    <div>
+      <textarea id="pesan" rows="5" cols="50" placeholder="Tulis sesuatu di sini..."></textarea>
+    </div>
+    <div style="margin-top:8px">
+      <div id="textarea-result" class="result-note"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>4) Frame Horisontal</h2>
+    <div class="frame-box h-frame">
+      <iframe srcdoc="<h3 style='font-family:system-ui'>Frame Horisontal - Kiri</h3><p>Ini konten frame kiri.</p>" sandbox></iframe>
+      <iframe srcdoc="<h3 style='font-family:system-ui'>Frame Horisontal - Kanan</h3><p>Ini konten frame kanan.</p>" sandbox></iframe>
+    </div>
+  </section>
+
+  <section>
+    <h2>5) Frame Vertikal</h2>
+    <div class="frame-box v-frame">
+      <iframe srcdoc="<h3>Frame Vertikal - Atas</h3><p>Konten atas.</p>" sandbox></iframe>
+      <iframe srcdoc="<h3>Frame Vertikal - Bawah</h3><p>Konten bawah.</p>" sandbox></iframe>
+    </div>
+  </section>
+
+  <section>
+    <h2>6) Frame Gabungan H-V</h2>
+    <div class="frame-box hv-frame">
+      <div class="left">
+        <iframe srcdoc="<h3>Gabungan - Kiri Atas</h3><p>Isi kiri atas.</p>" sandbox></iframe>
+        <iframe srcdoc="<h3>Gabungan - Kiri Bawah</h3><p>Isi kiri bawah.</p>" sandbox></iframe>
+      </div>
+      <div class="right">
+        <iframe srcdoc="<h3>Gabungan - Kanan Besar</h3><p>Area besar di kanan (menggabungkan H & V).</p>" sandbox></iframe>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function showRadio(){
+      const sel = document.querySelector('input[name="warna"]:checked');
+      document.getElementById('radio-result').textContent = sel ? ('Anda memilih: ' + sel.value) : 'Belum memilih.';
+    }
+    function showSelect(){
+      const s = document.getElementById('pilih-buah');
+      const val = s.value;
+      document.getElementById('select-result').textContent = val ? ('Anda memilih: ' + val) : 'Belum memilih.';
+    }
+    function showTextarea(){
+      const t = document.getElementById('pesan').value;
+      document.getElementById('textarea-result').textContent = t ? ('Isi: ' + t) : 'Textarea kosong.';
+    }
+  </script>
+
+</body>
+</html>

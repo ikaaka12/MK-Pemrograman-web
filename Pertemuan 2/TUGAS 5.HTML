@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Tabel Colspan & Rowspan</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 400px;
+        }
+        td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 20px;
+        }
+        .colspan {
+            background-color: rgb(144, 182, 238);
+        }
+        .rowspan {
+            background-color: rgb(128, 0, 21);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h3>Contoh Tabel dengan Colspan dan Rowspan</h3>
+    <table>
+        <tr>
+            <td></td>
+            <td colspan="2" class="colspan">colspan = "2"</td>
+        </tr>
+        <tr>
+            <td rowspan="2" class="rowspan">rowspan = "2"</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
