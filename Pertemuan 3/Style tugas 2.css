@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f8ff;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.layout {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.menu {
+  width: 200px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.menu h2 {
+  margin-bottom: 10px;
+}
+
+.makanan {
+  background: #ffe4e1;
+  color: #b22222;
+}
+
+.minuman {
+  background: #e0ffff;
+  color: #006666;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 6px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
