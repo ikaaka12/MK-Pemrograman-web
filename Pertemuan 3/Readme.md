@@ -195,7 +195,7 @@ Pertama, pada bagian CSS footer, kode tersebut mengatur tampilan area paling baw
   </header>
 ```
 
-Setelah itu, masuk ke bagian body halaman, yaitu <header>. Bagian ini menampilkan judul utama halaman portofolio. Judul ditulis dengan <h1> yang berisi teks “🌟 Portofolio Hidup Guehhh 🌟”, lalu ada paragraf <p> berisi deskripsi singkat “Cerita hidup sederhana dan penuh warna🤭”. Header ini adalah bagian pengenalan utama dari halaman.
+Setelah itu, masuk ke bagian body halaman, yaitu <header>. Bagian ini menampilkan judul utama halaman portofolio. Judul ditulis dengan `<h1>` yang berisi teks “🌟 Portofolio Hidup Guehhh 🌟”, lalu ada paragraf <p> berisi deskripsi singkat “Cerita hidup sederhana dan penuh warna🤭”. Header ini adalah bagian pengenalan utama dari halaman.
 
 15. HTML
 ```html
@@ -234,7 +234,7 @@ Pertama, ada sebuah container <div class="container"> yang berfungsi sebagai wad
     </section>
 ```
 
-Bagian pertama adalah section dengan id "tentang". Di sini terdapat judul <h2> dengan teks “🙋 Tentang” untuk menandai bahwa ini adalah bagian perkenalan diri. Selanjutnya ditampilkan sebuah foto profil dengan elemen <img src="ika.jpg.jpg" alt="Foto Profil">. Setelah itu ada paragraf <p> panjang yang berisi perkenalan: menyebutkan nama, asal kampus, tempat lahir, umur, hobi, cita-cita, dan filosofi hidup. Paragraf ini juga memanfaatkan elemen <b> untuk menebalkan kata “senyum 😊” agar lebih menonjol. Jadi, bagian ini berfungsi untuk memberi gambaran singkat tentang diri pemilik portofolio.
+Bagian pertama adalah section dengan id "tentang". Di sini terdapat judul `<h2>` dengan teks “🙋 Tentang” untuk menandai bahwa ini adalah bagian perkenalan diri. Selanjutnya ditampilkan sebuah foto profil dengan elemen <img src="ika.jpg.jpg" alt="Foto Profil">. Setelah itu ada paragraf <p> panjang yang berisi perkenalan: menyebutkan nama, asal kampus, tempat lahir, umur, hobi, cita-cita, dan filosofi hidup. Paragraf ini juga memanfaatkan elemen `<b>` untuk menebalkan kata “senyum 😊” agar lebih menonjol. Jadi, bagian ini berfungsi untuk memberi gambaran singkat tentang diri pemilik portofolio.
 
 18.  HTML
 ```html
@@ -269,7 +269,7 @@ Bagian pertama adalah section dengan id "tentang". Di sini terdapat judul <h2> d
     </section>
 ```
 
-Kemudian masuk ke section kedua dengan id "pengalaman". Walaupun id-nya “pengalaman”, bagian ini sebenarnya berisi Data Pribadi. Judulnya ditulis dengan <h2> berisi teks “📖 Data Pribadi”. Lalu ada sebuah tabel <table> yang digunakan untuk menampilkan informasi pribadi dalam bentuk baris dan kolom.
+Kemudian masuk ke section kedua dengan id "pengalaman". Walaupun id-nya “pengalaman”, bagian ini sebenarnya berisi Data Pribadi. Judulnya ditulis dengan `<h2>`  berisi teks “📖 Data Pribadi”. Lalu ada sebuah tabel <table> yang digunakan untuk menampilkan informasi pribadi dalam bentuk baris dan kolom.
 Baris pertama menampilkan Nama beserta isinya.
 Baris kedua menampilkan Tempat/Tanggal Lahir.
 Baris ketiga berisi Jenis Kelamin.
@@ -291,7 +291,7 @@ Dengan penggunaan tabel ini, data pribadi terlihat lebih rapi, mudah dibaca, dan
     </section>
 ```
 
-Pertama, ada section dengan id "hobi". Bagian ini ditandai dengan judul <h2> bertuliskan “🎉 Hobi & Kesukaan”. Di dalamnya terdapat sebuah daftar tidak berurutan <ul> dengan beberapa item <li>. Masing-masing item menampilkan hobi pemilik portofolio, seperti makan cemilan sambil nonton drama, membaca buku, tidur sepanjang hari, dan minum kopi. Daftar ini mempermudah pengunjung melihat apa saja aktivitas kesukaan secara singkat dan rapi.
+Pertama, ada section dengan id "hobi". Bagian ini ditandai dengan judul `<h2>` bertuliskan “🎉 Hobi & Kesukaan”. Di dalamnya terdapat sebuah daftar tidak berurutan <ul> dengan beberapa item <li>. Masing-masing item menampilkan hobi pemilik portofolio, seperti makan cemilan sambil nonton drama, membaca buku, tidur sepanjang hari, dan minum kopi. Daftar ini mempermudah pengunjung melihat apa saja aktivitas kesukaan secara singkat dan rapi.
 
 20. HTML
 ```html
@@ -308,7 +308,7 @@ Pertama, ada section dengan id "hobi". Bagian ini ditandai dengan judul <h2> ber
   </div>
 ```
 
-Selanjutnya, ada section dengan id "kontak". Judulnya <h2> adalah “📩 Kontak Saya”. Di bagian ini terdapat sebuah form <form> untuk mengisi data.
+Selanjutnya, ada section dengan id "kontak". Judulnya `<h2>` adalah “📩 Kontak Saya”. Di bagian ini terdapat sebuah form <form> untuk mengisi data.
 Input pertama adalah kolom nomor HP dengan placeholder “NoHP:081349455410”.
 Input kedua adalah kolom akun Instagram dengan placeholder “IG:ikakaaaa”.
 Lalu ada <textarea> yang memberikan ruang untuk menuliskan pesan. Placeholder pada textarea berisi kalimat puitis untuk contoh isian.
