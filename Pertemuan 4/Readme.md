@@ -15,7 +15,7 @@
       </div>
 ```
 
-Pertama, bagian riwayat pendidikan dibuat dengan elemen <div> yang berisi judul kecil (<h3>) dan sebuah tabel (<table>). Tabel ini menampilkan data pendidikan mulai dari SD, SMP, SMA, hingga kuliah, masing-masing ditulis dalam baris (<tr>) dengan dua kolom (<td>), yaitu nama jenjang dan tahun atau universitasnya.
+Pertama, bagian riwayat pendidikan dibuat dengan elemen <div> yang berisi judul kecil (`<h3>`) dan sebuah tabel (<table>). Tabel ini menampilkan data pendidikan mulai dari SD, SMP, SMA, hingga kuliah, masing-masing ditulis dalam baris (<tr>) dengan dua kolom (<td>), yaitu nama jenjang dan tahun atau universitasnya.
 
 
 2. HTML
@@ -88,7 +88,7 @@ Ketiga, bagian galeri foto disusun dalam sebuah container (<div class="gallery-c
       showSlides(slideIndex = n);
     }
   </script>
-  
+
 </body>
 </html>
 ```
