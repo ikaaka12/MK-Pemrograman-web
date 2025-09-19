@@ -26,7 +26,7 @@ JavaScript Pemrograman WEB Teknik Komputer
 
 Jadi, kode ini merupakan contoh paling sederhana bagaimana JavaScript digunakan untuk menampilkan teks ke halaman web.
 
-![alt text](Foto 1)
+![alt text](Foto 1.png)
 
 
 2. HTML
@@ -70,8 +70,8 @@ Perintah tersebut akan mencari elemen dengan id="hasil" lalu mengisinya dengan t
 
 Dengan demikian, ketika halaman dijalankan, pengguna akan melihat judul, subjudul, sebuah tombol, dan area kosong di bawah tombol. Jika pengguna menekan tombol “klik disini”, maka tulisan “Hai, Nama Saya Ika Maryana Mudrikah” akan muncul pada area kosong tersebut.
 
-![alt text](Foto 2)
-![alt text](Foto 22)
+![alt text](Foto 2.png)
+![alt text](Foto 22.png)
 
 3. HTML 
 ```html
@@ -113,7 +113,7 @@ Dengan demikian, saat kode dijalankan, halaman web akan menampilkan dua baris:
 Dua kali dari 4 adalah 8
 Nilai dari a adalah 8
 
-![alt text](Foto 3)
+![alt text](Foto 3.png)
 
 
 4. HTML
@@ -147,7 +147,7 @@ Hasil akhirnya di browser akan terlihat tulisan:
 Program JavaScript Aku di kepalaProgram JavaScript Aku di body.
 (keduanya menyatu dalam satu baris karena tidak ada <br> untuk pindah baris).
 
-![alt text](Foto 4)
+![alt text](Foto 4.png)
 
 
 5. HTML
@@ -192,9 +192,9 @@ Perintah window.confirm() akan menampilkan kotak konfirmasi dengan pesan “Apak
 
 Kemudian document.write() akan menampilkan teks “Jawaban Anda: true” jika pengguna menekan OK, atau “Jawaban Anda: false” jika pengguna menekan Cancel.
 
-![alt text](Foto 5)
-![alt text](Foto 55)
-![alt text](Foto 555)
+![alt text](Foto 5.png)
+![alt text](Foto 55.png)
+![alt text](Foto 555.png)
 
 
 6. HTML
@@ -246,7 +246,7 @@ Berikutnya, b = parseFloat("27A"); akan membaca hanya angka di depan string "27A
 
 Terakhir, b = parseFloat("A27.5"); mencoba membaca angka dari string "A27.5". Karena string diawali huruf, hasilnya NaN, lalu ditampilkan sebagai 8.NaN.
 
-![alt text](Foto 6)
+![alt text](Foto 6.png)
 
 
 7. HTML
@@ -282,7 +282,7 @@ Hai,Ika
 
 Jadi, kode ini adalah contoh penggunaan prompt di JavaScript untuk meminta input dari pengguna, lalu menampilkannya kembali di halaman web.
 
-![alt text](Foto 7)
+![alt text](Foto 7.png)
 
 
 8. HTML
@@ -335,7 +335,7 @@ document.write("<BR>");
 → Membuat baris baru.
 
 
-![alt text](Foto 8)
+![alt text](Foto 8.png)
 
 
 9. HTML
@@ -376,7 +376,7 @@ Jika pengguna memasukkan 80, maka output di browser adalah “Hasil: Lulus”.
 Jika pengguna memasukkan 45, maka output di browser adalah “Hasil: Tidak Lulus”.
 Dengan demikian, program ini adalah contoh sederhana penggunaan operator ? : (ternary) dalam JavaScript untuk membuat keputusan cepat berdasarkan kondisi
 
-![alt text](Foto 9)
-![alt text](Foto 99)
-![alt text](Foto 999)
-![alt text](Foto 9999)
+![alt text](Foto 9.png)
+![alt text](Foto 99.png)
+![alt text](Foto 999.png)
+![alt text](Foto 9999.png)
