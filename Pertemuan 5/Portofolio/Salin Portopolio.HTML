@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio - 3 Slide</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #fff9db, #d0f0ff);
+      color: #333;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .ornamen {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.3;
+      z-index: 0;
+      animation: float 8s ease-in-out infinite;
+    }
+    .ornamen.small { width: 80px; height: 80px; background: #ff6b6b; top: 10%; left: 5%; }
+    .ornamen.medium { width: 120px; height: 120px; background: #6bc1ff; bottom: 15%; right: 10%; }
+    .ornamen.large { width: 200px; height: 200px; background: #ffd93d; top: 60%; left: -50px; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      background: #6bc1ff;
+      z-index: 1;
+    }
+
+    .slideshow-container::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 80px;
+      background: url('https://svgshare.com/i/14tA.svg') repeat-x;
+      background-size: cover;
+      animation: waveMove 10s linear infinite;
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    @keyframes waveMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .slideshow-container::after {
+      content: "✦ ✧ ✦";
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 24px;
+      color: white;
+      opacity: 0.7;
+      animation: twinkle 3s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.3; transform: scale(0.9); }
+      to { opacity: 0.9; transform: scale(1.1); }
+    }
+
+    .slide {
+      display: none;
+      padding: 40px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slide img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ff6b6b;
+      margin: 10px auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+    .slide img:hover { transform: scale(1.05); }
+
+    .slide h2, .slide h3 {
+      margin-bottom: 15px;
+      font-size: 1.5em;
+      transition: color 0.3s;
+    }
+    .slide h2:hover, .slide h3:hover {
+      color: #6bc1ff;
+    }
+
+    .section {
+      margin: 25px 0;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #f7f7f7;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .section:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #f7f7f7;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    table td {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+    }
+    table tr:nth-child(even) {
+      background: #f7f7f7;
+    }
+
+    ul {
+      list-style: "✨ ";
+      padding-left: 20px;
+    }
+
+    .contact-links a {
+      display: block;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      transition: transform 0.3s;
+    }
+    .contact-links a:hover { transform: scale(1.05); }
+    .wa-btn { background: #25D366; }
+    .ig-btn { background: #ff6b6b; }
+
+    textarea {
+      padding: 10px;
+      border: 2px solid #ff6b6b;
+      border-radius: 8px;
+      font-size: 1em;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background: #ff6b6b;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1em;
+      box-shadow: 2px 2px 0px #333;
+      transition: transform 0.3s;
+    }
+    button:hover { 
+      background: #ffd93d;
+      transform: translateY(-3px);
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      justify-items: center;
+    }
+    .gallery-container img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 3px solid #ff6b6b;
+      border-radius: 10px;
+      transition: transform 0.3s;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+    .gallery-container img:hover {
+      transform: scale(1.1) rotate(2deg);
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 12px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      background: rgba(0,0,0,0.4);
+      border-radius: 50%;
+      user-select: none;
+      transition: 0.3s;
+      z-index: 2;
+    }
+    .next { right: 10px; }
+    .prev { left: 10px; }
+    .prev:hover, .next:hover {
+      background: rgba(0,0,0,0.7);
+    }
+
+    .dots {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .dots span {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 3px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .dots .active {
+      background-color: #ff6b6b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ornamen small"></div>
+  <div class="ornamen medium"></div>
+  <div class="ornamen large"></div>
+
+  <div class="slideshow-container">
+
+    <div class="slide active">
+      <h1>Hello Guys 👋</h1>
+      <h2>🌟 Portofolio Hidup Guehhh 🌟</h2>
+      <img src="foto ika.jpg.jpg" alt="Foto Profil">
+      <p>Hai perkenalkan nama aku Ika Maryana Mudrikah, aku mahasiswa Universitas Negeri Makassar.
+        Aku lahir di Kalimantan Timur, umurku 20 tahun (tapi bulan 10 nanti tanggal 6 wkwk).
+        Hobiku tuh main bultang 🏸 bareng teman-teman, terus cita-citaku mau jadi programmer 👩🏻‍💻.
+        Hidup ini ibarat mie instan 🍜 — kadang pedas, kadang hambar, tapi selalu bisa bikin kenyang.
+        Saya percaya hidup harus dijalani dengan senyum 😊 dan secangkir kopi ☕.</p>
+    </div>
+
+    <div class="slide">
+      <div class="section">
+        <h3>📖 Data Pribadi</h3>
+        <table>
+          <tr><td>Nama</td><td>: Ika Maryana Mudrikah</td></tr>
+          <tr><td>TTL</td><td>: Kembang Janggut, 06 Desember 2005</td></tr>
+          <tr><td>Jenis Kelamin</td><td>: Perempuan</td></tr>
+          <tr><td>Email</td><td>: iika47889@gmail.com</td></tr>
+        </table>
+      </div>
+
+      <div class="section">
+        <h3>🎓 Riwayat Pendidikan</h3>
+        <table>
+          <tr><td>SD</td><td>: 2012-1017</td></tr>
+          <tr><td>SMP</td><td>: 2018-2020</td></tr>
+          <tr><td>SMA</td><td>: 2021-2024</td></tr>
+          <tr><td>Kuliah</td><td>: Universitas Negeri Makassar</td></tr>
+        </table>
+      </div>
+
+      <div class="section">
+        <h3>🎉 Hobi/Kesukaan</h3>
+        <ul>
+          <li>Makan cemilan sambil nonton flim 🍿</li>
+          <li>Membaca buku 📖</li>
+          <li>Tidur sepanjang hari🛌🏼</li>
+          <li>Minum kopi ☕</li>
+          <li>Main Raket🏸</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>📩 Kontak</h3>
+        <div class="contact-links">
+          <a href="https://wa.me/6281349455410" target="_blank" class="wa-btn">💬 Chat via WhatsApp</a>
+          <a href="https://instagram.com/ikaakaaaa" target="_blank" class="ig-btn">📷 Kunjungi Instagram</a>
+          <a href="https://tiktok.com/wehh06_" target="_blank" class="ig-btn">📷 Kunjungi TikTok</a>
+        </div>
+        <textarea rows="3" placeholder="Tulis pesanmu di sini..."></textarea>
+        <button type="submit">Kirim Yuk 🚀</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h2>🖼️ Galeri Foto</h2>
+      <div class="gallery-container">
+        <img src="ikaa.jpg" alt="Foto 1">
+        <img src="moli.jpg" alt="Foto 2">
+        <img src="foto ika.jpg.jpg" alt="Foto 3">
+        <img src="iika.jpg" alt="Foto 4">
+        <img src="ikaaa.jpg" alt="Foto 5">
+      </div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <div class="dots">
+    <span onclick="currentSlide(1)" class="active"></span>
+    <span onclick="currentSlide(2)"></span>
+    <span onclick="currentSlide(3)"></span>
+  </div>
+
+  <script>
+
+    let slideIndex = 1;
+
+    function showSlides(n) {
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".dots span");
+
+      if (n > slides.length) slideIndex = 1;
+      if (n < 1) slideIndex = slides.length;
+
+      slides.forEach(slide => slide.classList.remove("active"));
+      dots.forEach(dot => dot.classList.remove("active"));
+
+      slides[slideIndex-1].classList.add("active");
+      dots[slideIndex-1].classList.add("active");
+    }
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    window.alert("Selamat datang di Portofolio Ika 🌟");
+
+    var Ika = prompt("Siapa nama Anda?");
+    if(Ika){
+    }
+
+    var yakin = window.confirm("Apakah kamu suka dengan desain portofolio ini?");
+    if(yakin){
+    } else {
+      document.write("<p>Tidak apa-apa, saya akan berusaha lebih baik lagi 💪</p>");
+    }
+
+  </script>
+
+</body>
+</html>

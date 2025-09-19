@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hitungan Bangun Ruang</title>
+</head>
+<body>
+  <h2>Perhitungan Bangun Ruang</h2>
+
+  <h3>Volume Kubus</h3>
+  Sisi: <input type="text" id="sisi">
+  <button onclick="kubus()">Hitung</button>
+  <p>Hasil: <span id="hasilKubus"></span></p>
+
+  <h3>Volume Balok</h3>
+  Panjang: <input type="text" id="p">
+  Lebar: <input type="text" id="l">
+  Tinggi: <input type="text" id="t">
+  <button onclick="balok()">Hitung</button>
+  <p>Hasil: <span id="hasilBalok"></span></p>
+
+  <h3>Volume Bola</h3>
+  Jari-jari: <input type="text" id="r">
+  <button onclick="bola()">Hitung</button>
+  <p>Hasil: <span id="hasilBola"></span></p>
+
+  <script>
+    function kubus(){
+      let s = parseFloat(document.getElementById("sisi").value);
+      let v = s*s*s;
+      document.getElementById("hasilKubus").innerText = v;
+    }
+
+    function balok(){
+      let p = parseFloat(document.getElementById("p").value);
+      let l = parseFloat(document.getElementById("l").value);
+      let t = parseFloat(document.getElementById("t").value);
+      let v = p*l*t;
+      document.getElementById("hasilBalok").innerText = v;
+    }
+
+    function bola(){
+      let r = parseFloat(document.getElementById("r").value);
+      let v = (4/3) * Math.PI * r*r*r;
+      document.getElementById("hasilBola").innerText = v.toFixed(2);
+    }
+  </script>
+</body>
+</html>
