@@ -12,6 +12,7 @@
       color: #333;
       position: relative;
       overflow-x: hidden;
+      transition: background 0.5s, color 0.5s;
     }
 
     .ornamen {
@@ -257,7 +258,7 @@
 
     <div class="slide active">
       <h1>Hello Guys 👋</h1>
-      <h2>🌟 Portofolio Hidup Guehhh 🌟</h2>
+      <h2>🌟 Portofolio Hidup Ika 🌟</h2>
       <img src="foto ika.jpg.jpg" alt="Foto Profil">
       <p>Hai perkenalkan nama aku Ika Maryana Mudrikah, aku mahasiswa Universitas Negeri Makassar.
         Aku lahir di Kalimantan Timur, umurku 20 tahun (tapi bulan 10 nanti tanggal 6 wkwk).
@@ -332,7 +333,6 @@
   </div>
 
   <script>
-
     let slideIndex = 1;
 
     function showSlides(n) {
@@ -357,18 +357,84 @@
       showSlides(slideIndex = n);
     }
 
-    window.alert("Selamat datang di Portofolio Ika 🌟");
+    window.alert("🌟 Selamat datang di Portofolio Ika 🌟");
 
-    var Ika = prompt("Siapa nama Anda?");
-    if(Ika){
+    var nama = prompt("Siapa nama Anda?");
+    if(nama){
+      let greet = document.createElement("h3");
+      greet.innerHTML = " ✨ Halo, " + nama + " 👋! Selamat menikmati portofolio saya ✨";
+      greet.style.textAlign = "center";
+      greet.style.color = "#ff6b6b";
+      document.body.insertBefore(greet, document.body.firstChild);
     }
 
     var yakin = window.confirm("Apakah kamu suka dengan desain portofolio ini?");
     if(yakin){
+      console.log("Pengguna suka dengan desain ini 👍");
     } else {
-      document.write("<p>Tidak apa-apa, saya akan berusaha lebih baik lagi 💪</p>");
+      let msg = document.createElement("p");
+      msg.innerHTML = "Tidak apa-apa, saya akan berusaha lebih baik lagi 💪";
+      msg.style.textAlign = "center";
+      msg.style.color = "red";
+      document.body.appendChild(msg);
     }
 
+    let clock = document.createElement("div");
+    clock.id = "clock";
+    clock.style.position = "fixed";
+    clock.style.top = "10px";
+    clock.style.left = "10px";
+    clock.style.padding = "8px 15px";
+    clock.style.background = "#333";
+    clock.style.color = "white";
+    clock.style.borderRadius = "8px";
+    clock.style.fontFamily = "monospace";
+    document.body.appendChild(clock);
+
+    function updateClock(){
+      let now = new Date();
+      clock.innerHTML = now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+
+    let btnDark = document.createElement("button");
+    btnDark.innerHTML = "🌙 Mode Gelap";
+    btnDark.style.position = "fixed";
+    btnDark.style.bottom = "20px";
+    btnDark.style.right = "20px";
+    btnDark.style.padding = "10px";
+    btnDark.style.border = "none";
+    btnDark.style.borderRadius = "8px";
+    btnDark.style.background = "#ff6b6b";
+    btnDark.style.color = "white";
+    btnDark.style.cursor = "pointer";
+    document.body.appendChild(btnDark);
+
+    btnDark.onclick = function(){
+      document.body.classList.toggle("dark-mode");
+      if(document.body.classList.contains("dark-mode")){
+        btnDark.innerHTML = "☀️ Mode Terang";
+        document.body.style.background = "#222";
+        document.body.style.color = "#eee";
+      } else {
+        btnDark.innerHTML = "🌙 Mode Gelap";
+        document.body.style.background = "linear-gradient(135deg, #fff9db, #d0f0ff)";
+        document.body.style.color = "#333";
+      }
+    };
+
+    let typingText = "🌟 Selamat Datang di Portofolio Hidup Ika 🌟";
+    let h2 = document.querySelector(".slide.active h2");
+    h2.innerHTML = "";
+    let i = 0;
+    function typeEffect(){
+      if(i < typingText.length){
+        h2.innerHTML += typingText.charAt(i);
+        i++;
+        setTimeout(typeEffect, 80);
+      }
+    }
+    typeEffect();
   </script>
 
 </body>
