@@ -55,7 +55,7 @@ Jadi, kode ini merupakan contoh paling sederhana bagaimana JavaScript digunakan 
 
 Kode dimulai dengan <!DOCTYPE html> yang menyatakan bahwa dokumen menggunakan standar HTML5. Lalu, pada tag <head> terdapat <title>Belajar Javascript : Mengenal Event Pada Javascript</title> yang memberikan judul pada halaman, yaitu “Belajar Javascript : Mengenal Event Pada Javascript”.
 
-Di dalam <body>, terdapat heading <h1> dengan tulisan “Mengenal Event Pada Javascript” sebagai judul utama halaman, dan <h2> dengan tulisan “Perograman WEB Event one click” sebagai subjudul.
+Di dalam <body>, terdapat heading `<h1>` dengan tulisan “Mengenal Event Pada Javascript” sebagai judul utama halaman, dan dengan tulisan “Perograman WEB Event one click” sebagai subjudul.
 
 Selanjutnya, terdapat sebuah tombol <button onclick="tampilkan_nama()">klik disini </button>. Tombol ini memiliki event onclick, artinya ketika tombol diklik, maka fungsi JavaScript bernama tampilkan_nama() akan dijalankan.
 
@@ -63,10 +63,10 @@ Di bawah tombol terdapat <div id="hasil"></div>, yaitu sebuah wadah kosong denga
 
 Bagian <script> berisi definisi fungsi tampilkan_nama(). Di dalam fungsi ini, terdapat perintah:
 
-document.getElementById("hasil").innerHTML = "<h3>Hai, Nama Saya Ika Maryana Mudrikah</h3>";
+document.getElementById("hasil").innerHTML = " `<h3>` Hai, Nama Saya Ika Maryana Mudrikah `</h3>` ";
 
 
-Perintah tersebut akan mencari elemen dengan id="hasil" lalu mengisinya dengan teks berupa heading <h3> yang bertuliskan “Hai, Nama Saya Ika Maryana Mudrikah”.
+Perintah tersebut akan mencari elemen dengan id="hasil" lalu mengisinya dengan teks berupa heading `<h3>` yang bertuliskan “Hai, Nama Saya Ika Maryana Mudrikah”.
 
 Dengan demikian, ketika halaman dijalankan, pengguna akan melihat judul, subjudul, sebuah tombol, dan area kosong di bawah tombol. Jika pengguna menekan tombol “klik disini”, maka tulisan “Hai, Nama Saya Ika Maryana Mudrikah” akan muncul pada area kosong tersebut.
 
