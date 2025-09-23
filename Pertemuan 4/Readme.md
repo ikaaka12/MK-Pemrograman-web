@@ -94,4 +94,3 @@ Ketiga, bagian galeri foto disusun dalam sebuah container (<div class="gallery-c
 ```
 
 Keempat, bagian JavaScript mengatur logika perpindahan slide. Variabel slideIndex dipakai untuk menyimpan slide mana yang sedang aktif. Fungsi showSlides(n) digunakan untuk menampilkan slide sesuai index yang dipilih. Jika index melebihi jumlah slide, maka otomatis kembali ke slide pertama, sedangkan jika index kurang dari satu, maka kembali ke slide terakhir. Setiap kali fungsi ini dijalankan, semua slide dan titik indikator direset dulu (class "active" dihapus), lalu hanya slide dan titik yang sesuai dengan slideIndex yang ditandai aktif.
-
