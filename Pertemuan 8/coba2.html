@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kartu Profil + Slider (Menu dengan Gambar)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>
+  <style>
+    .hidden { display: none; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .bounce { animation: bounce 1.5s infinite; }
+    .btn-anim { transition: transform 0.2s; }
+    .btn-anim:active { transform: scale(0.9); }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-pink-50 to-gray-100 flex flex-col items-center justify-center min-h-screen">
+
+  <!-- Kartu Profil -->
+  <div id="profileCard" class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+    <div class="flex flex-col gap-2 p-8 sm:flex-row sm:items-center sm:gap-6">
+      <img class="mx-auto block h-24 w-24 rounded-full sm:mx-0 sm:shrink-0" 
+           src="https://randomuser.me/api/portraits/women/68.jpg" 
+           alt="Foto Profil" />
+      <div class="space-y-2 text-center sm:text-left">
+        <div class="space-y-0.5">
+          <p class="text-lg font-semibold text-black">Erin Lindford</p>
+          <p class="font-medium text-gray-500">Product Engineer</p>
+        </div>
+        <button 
+          onclick="showSlider()"
+          class="border border-purple-200 text-purple-600 px-4 py-2 rounded-lg hover:border-transparent hover:bg-purple-600 hover:text-white transition">
+          Message
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDER -->
+  <div id="sliderContainer" class="hidden max-w-3xl w-full mx-auto mt-8 bg-white rounded-xl shadow-lg p-6 relative">
+    <!-- Slide 1 -->
+    <div class="slide text-center">
+      <h2 class="text-2xl font-bold text-brown-700 mb-4">Selamat Datang di Kopi Komar ☕</h2>
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=300" 
+           alt="Kopi Komar" 
+           class="mx-auto rounded-lg shadow-md w-48 h-48 object-cover">
+      <button onclick="goToSlide(1)" 
+              class="mt-4 text-purple-600 font-semibold hover:underline bounce">
+        Pesan di sini
+      </button>
+    </div>
+
+    <!-- Slide 2 (Menu Kopi dengan Gambar) -->
+    <div class="slide hidden text-center">
+      <h2 class="text-2xl font-bold text-brown-700 mb-6">Menu Kopi Komar</h2>
+
+      <!-- Accordion -->
+      <div id="accordion-collapse" data-accordion="collapse" class="text-left">
+
+        <!-- Kopi Dingin -->
+        <h2>
+          <button type="button" class="flex justify-between items-center w-full p-4 font-medium text-left text-purple-700 border border-b-0 rounded-t-lg hover:bg-purple-50" data-accordion-target="#body-1" aria-expanded="true" aria-controls="body-1">
+            <span>Kopi Dingin</span>
+            <svg data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+          </button>
+        </h2>
+        <div id="body-1" class="hidden p-4 border border-b-0">
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=80" class="w-12 h-12 rounded-lg object-cover">
+                <span>Kopitam ............ 13K</span>
+              </div>
+              <input type="number" min="0" value="0" class="w-16 border rounded text-center ml-2">
+            </li>
+            <li class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?w=80" class="w-12 h-12 rounded-lg object-cover">
+                <span>KSI ..................... 13K</span>
+              </div>
+              <input type="number" min="0" value="0" class="w-16 border rounded text-center ml-2">
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kopi Panas -->
+        <h2>
+          <button type="button" class="flex justify-between items-center w-full p-4 font-medium text-left text-purple-700 border border-b-0 hover:bg-purple-50" data-accordion-target="#body-2" aria-expanded="false" aria-controls="body-2">
+            <span>Kopi Panas</span>
+            <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+          </button>
+        </h2>
+        <div id="body-2" class="hidden p-4 border border-b-0">
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1586201375754-1421eede5b18?w=80" class="w-12 h-12 rounded-lg object-cover">
+                <span>Kopitam .......... 13K</span>
+              </div>
+              <input type="number" min="0" value="0" class="w-16 border rounded text-center ml-2">
+            </li>
+            <li class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1593366244390-3806d77f1d55?w=80" class="w-12 h-12 rounded-lg object-cover">
+                <span>Kosuka ............... 13K</span>
+              </div>
+              <input type="number" min="0" value="0" class="w-16 border rounded text-center ml-2">
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tanpa Kopi -->
+        <h2>
+          <button type="button" class="flex justify-between items-center w-full p-4 font-medium text-left text-purple-700 border hover:bg-purple-50" data-accordion-target="#body-3" aria-expanded="false" aria-controls="body-3">
+            <span>Tanpa Kopi</span>
+            <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+          </button>
+        </h2>
+        <div id="body-3" class="hidden p-4 border">
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1572441710534-680c7d3fc3b7?w=80" class="w-12 h-12 rounded-lg object-cover">
+                <span>Tehsuren ............ 13K</span>
+              </div>
+              <input type="number" min="0" value="0" class="w-16 border rounded text-center ml-2">
+            </li>
+            <li class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1586201375761-83865001e8f2?w=80" class="w-12 h-12 rounded-lg object-cover">
+                <span>Coklat ................. 13K</span>
+              </div>
+              <input type="number" min="0" value="0" class="w-16 border rounded text-center ml-2">
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tombol Pesan -->
+      <button onclick="pesanKopi()" class="mt-6 px-6 py-2 bg-purple-600 text-white rounded-lg shadow btn-anim hover:bg-purple-700">
+        Pesan Sekarang
+      </button>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide hidden text-center">
+      <h2 class="text-2xl font-bold text-brown-700">Siap Antar 🚴‍♂️</h2>
+      <p class="mt-2 text-gray-600">Pesananmu langsung kami antar dengan cepat.</p>
+
+      <!-- Pilihan Pembayaran -->
+      <div class="mt-6 space-y-4">
+        <p class="font-semibold text-gray-700">Pilih metode pembayaran:</p>
+        <div class="flex items-center justify-center gap-6">
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input type="radio" name="payment" value="Cash" class="text-purple-600">
+            <span>Cash</span>
+          </label>
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input type="radio" name="payment" value="QRIS" class="text-purple-600">
+            <span>QRIS</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Tombol Konfirmasi -->
+      <button onclick="konfirmasiPembayaran()" 
+              class="mt-6 px-6 py-2 bg-purple-600 text-white rounded-lg shadow hover:bg-purple-700">
+        Konfirmasi Pesanan
+      </button>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide hidden text-center">
+      <h2 class="text-2xl font-bold text-brown-700">Terima Kasih ❤️</h2>
+      <p class="mt-2 text-gray-600">Rasakan kehangatan di setiap tegukan kopi kami.</p>
+    </div>
+
+    <!-- Navigasi -->
+    <div class="flex justify-between mt-6">
+      <button onclick="prevSlide()" class="px-4 py-2 bg-purple-200 rounded-full hover:bg-purple-400">←</button>
+      <button onclick="nextSlide()" class="px-4 py-2 bg-purple-200 rounded-full hover:bg-purple-400">→</button>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+    const sliderContainer = document.getElementById("sliderContainer");
+    const profileCard = document.getElementById("profileCard");
+
+    function showSlider() {
+      profileCard.classList.add("hidden");
+      sliderContainer.classList.remove("hidden");
+      showSlide(currentSlide);
+    }
+    function showSlide(index) {
+      slides.forEach((slide, i) => slide.classList.add("hidden"));
+      slides[index].classList.remove("hidden");
+    }
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+    function goToSlide(index) {
+      currentSlide = index;
+      showSlide(currentSlide);
+    }
+    function pesanKopi() {
+      let jumlah = 0;
+      document.querySelectorAll("input[type='number']").forEach(input => {
+        jumlah += parseInt(input.value) || 0;
+      });
+      if (jumlah > 0) {
+        window.jumlahPesanan = jumlah; // simpan jumlah pesanan
+        goToSlide(2); // langsung ke Slide 3
+      }
+    }
+    function konfirmasiPembayaran() {
+      const metode = document.querySelector("input[name='payment']:checked");
+      if (metode) {
+        goToSlide(3); // ke Slide 4 (Terima Kasih)
+      } else {
+        alert("Silakan pilih metode pembayaran dulu.");
+      }
+    }
+  </script>
+
+</body>
+</html>
